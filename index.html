@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pétale — Prêt-à-Porter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+</nav>
+
+<!-- ══════════════════════════════ PAGE ACCUEIL ══════════════════════════════ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=400&q=80" alt="Mode femme" loading="eager"/>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-chip">Collection Printemps 2026</span>
+      <h1>La mode en<br/><em>toute douceur</em></h1>
+      <p>Des pièces intemporelles, des matières naturelles, pour une élégance qui vous ressemble.</p>
+      <button class="btn-blanc" onclick="goTo('boutique')">
+        Découvrir
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Promo -->
+  <div class="promo" style="margin-top:1.5rem">
+    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80" alt="Soldes été"/>
+    <div class="promo-overlay"></div>
+    <div class="promo-txt">
+      <small>✦ Offre limitée</small>
+      <h3>Soldes d'été<br/>jusqu'à −30%</h3>
+      <a href="#" class="btn-promo">Profiter de l'offre →</a>
+    </div>
+  </div>
+
+  <!-- Looks -->
+  <div class="sh"><div class="sh-l"><span>Inspiration</span><h2>Les looks du moment</h2></div></div>
+  <div class="looks-row">
+    <div class="look"><img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=400&q=80" alt="Look 1"/><div class="look-info"><p>Look Naturel</p><span>Dès 20 000 FCFA</span></div></div>
+    <div class="look"><img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&q=80" alt="Look 3"/><div class="look-info"><p>Look Bohème</p><span>Dès 30 000 FCFA</span></div></div>
+  </div>
+
+  <!-- Valeurs -->
+  <div class="sh"><div class="sh-l"><span>Notre promesse</span><h2>Fabriqué avec soin</h2></div></div>
+  <div class="vals">
+    <div class="val"><div class="val-icon">🌿</div><h4>Matières naturelles</h4><p>Lin, coton bio et soie sélectionnés avec attention</p></div>
+    <div class="val"><div class="val-icon">📦</div><h4>Livraison offerte</h4><p>Dès 25 000 FCFA d'achat, retours gratuits 14 jours</p></div>
+    <div class="val"><div class="val-icon">🔁</div><h4>Échange facile</h4><p>Guide des tailles et échange sans frais</p></div>
+  </div>
+
+  <!-- Avis -->
+  <div class="sh"><div class="sh-l"><span>Avis clients</span><h2>Ce qu'elles en pensent</h2></div></div>
+  <div class="revs">
+    <div class="rev"><div class="rev-stars">★★★★★</div><q>La qualité est vraiment au rendez-vous. Les matières sont douces, la coupe parfaite.</q><span class="rev-name">Sophie M. — Paris</span></div>
+    <div class="rev"><div class="rev-stars">★★★★★</div><q>J'adore l'ambiance de la marque, les pièces sont exactement comme sur les photos.</q><span class="rev-name">Léa T. — Lyon</span></div>
+    <div class="rev"><div class="rev-stars">★★★★☆</div><q>Livraison rapide, emballage soigné et joli petit mot inclus. Une belle expérience.</q><span class="rev-name">Inès R. — Bordeaux</span></div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="nl">
+    <div class="nl-emoji">🌸</div>
+    <h3>Les nouveautés en avant-première</h3>
+    <p>Rejoignez plus de 15 000 abonnées et soyez les premières à découvrir nos pièces.</p>
+    <button onclick="handleNl()">Chaine whatsapp</button>
+  </div>
+
+  <footer>
+    <div class="ft-logo">Pétale</div>
+    <div class="ft-grid">
+      <a href="">Nouveautés en boutique</a>
+      <a href="">Livraisons dès 48h</a>
+      <a href="tel:+241062999231">Contact : +241 062 999 231</a>
+    </div>
+    <p class="ft-copy">© 2026 Pétale. Tous droits réservés.</p>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════ PAGE BOUTIQUE ══════════════════════════════ -->
+<div class="page" id="page-boutique" style="padding-top:54px">
+  <div class="sh"><div class="sh-l"><span>Collection</span><h2>Tous les articles</h2></div></div>
+  <div class="cats">
+    <button class="cat on" data-cat="all">Tout</button>
+    <button class="cat" data-cat="robes">Robes</button>
+    <button class="cat" data-cat="hauts">Hauts</button>
+    <button class="cat" data-cat="pantalons">Pantalons</button>
+    <button class="cat" data-cat="vestes">Vestes</button>
+  </div>
+  <div class="grid grid-2" id="product-grid" style="margin-top:.8rem"></div>
+</div>
+
+<!-- ══════════════════════════════ PAGE FAVORIS ══════════════════════════════ -->
+<div class="page" id="page-favoris" style="padding-top:54px">
+  <div class="sh"><div class="sh-l"><span>Mes favoris</span><h2>Articles aimés</h2></div></div>
+  <div class="grid grid-2" id="wishlist-grid"></div>
+  <div class="empty" id="wishlist-empty" style="display:none">
+    <div class="empty-icon">🤍</div>
+    <h3>Aucun favori</h3>
+    <p>Appuyez sur le cœur d'un article pour l'ajouter à vos favoris.</p>
+    <button class="btn-blanc" style="background:var(--brun);color:#fff;margin:0 auto" onclick="goTo('boutique')">
+      Parcourir la boutique
+    </button>
+  </div>
+</div>
+
+<!-- PANIER DRAWER -->
+<div class="drawer-bg" id="drawer-bg"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-handle"></div>
+  <h3>Mon panier</h3>
+  <div id="cart-items"></div>
+  <div class="cart-total"><span>Total</span><span id="cart-total">0 €</span></div>
+  <button class="btn-checkout" onclick="checkout()">Commander</button>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bnav">
+  <button class="bi on" id="bi-home" onclick="goTo('home')">
+    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span class="label">Accueil</span>
+  </button>
+  <button class="bi" id="bi-boutique" onclick="goTo('boutique')">
+    <svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l3-8H6.4"/><circle cx="9" cy="20" r="1"/><circle cx="19" cy="20" r="1"/></svg>
+    <span class="label">Boutique</span>
+  </button>
+  <button class="bi" id="bi-favoris" onclick="goTo('favoris')">
+    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <span class="label">Favoris</span>
+  </button>
+  <button class="bi" id="bi-panier" onclick="openDrawer()">
+    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    <span class="dot-badge" id="bnav-count">0</span>
+    <span class="label">Panier</span>
+  </button>
+</nav>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ZOOM MODAL -->
+<div class="zoom-modal" id="zoom-modal" onclick="closeZoom()">
+  <div class="zoom-container" onclick="event.stopPropagation()">
+    <button class="zoom-close" onclick="closeZoom()">✕</button>
+    <img id="zoom-img" src="" alt="Zoom"/>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
